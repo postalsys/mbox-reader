@@ -1,6 +1,6 @@
 {
     "name": "mbox-reader",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Read mbox file as a stream",
     "main": "lib/mbox-reader.js",
     "scripts": {
