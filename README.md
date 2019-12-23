@@ -17,9 +17,9 @@ Generator yields objects with the following properties:
 -   **returnPath** Sender email address
 -   **time** Sending time as a Date object or `false` if date was not parseable
 -   **content** is a Buffer with the RFC822 formatted message
--   **flags** a Set of IMAP compatible flags derived from Status and X-Status headers
--   **labels** a Set of Gmail labels from X-Gmail-Labels headers
--   **headers** a Map of headers where key is lowercase header key and value is an array of header lines for this key (without the key prefix)
+-   **flags** an Array of IMAP compatible flags derived from Status or X-Status headers
+-   **labels** an Array of Gmail labels (ie. mailbox names) from X-Gmail-Labels headers
+-   **headers** a Map of headers where key is a lowercase header key and value is an array of header lines for this key (without the key prefix)
 
 **Example**
 
