@@ -1,6 +1,6 @@
 # MboxReader
 
-Reads messages from a MBOX file. Output is an async generator where messages are yielded one by one.
+Reads email messages from a MBOX file. Output is an async generator where messages are yielded one by one.
 
 MboxReader supports very large (multi gigabyte) mbox files as messages are processed asynchronously.
 
@@ -8,9 +8,58 @@ MboxReader supports very large (multi gigabyte) mbox files as messages are proce
 
 ## Usage
 
+### Free, AGPL-licensed version
+
+First install the module from npm:
+
 ```
-eachMessage(readableStream) -> async generator
+$ npm install mbox-reader
 ```
+
+next import the `mboxReader` generator function into your script:
+
+```js
+const { mboxReader } = require('mbox-reader');
+```
+
+### MIT version
+
+MIT-licensed version is available for [Postal Systems subscribers](https://postalsys.com/).
+
+First install the module from Postal Systems private registry:
+
+```
+$ npm install @postalsys/mbox-reader
+```
+
+next import the `mboxReader` generator function into your script:
+
+```js
+const { mboxReader } = require('@postalsys/mbox-reader');
+```
+
+If you have already built your application using the free version of mbox-reader and do not want to modify require statements in your code, you can install the MIT-licensed version as an alias for "mbox-reader".
+
+```
+$ npm install mbox-reader@npm:@postalsys/mbox-reader
+```
+
+This way you can keep using the old module name
+
+```js
+const { mboxReader } = require('mbox-reader');
+```
+
+### Listing messages
+
+```
+mboxReader(readableStream, [options]) -> async generator
+```
+
+Where
+
+-   **options** is an optional options object
+    -   **gz** _{Boolean}_ indicates if the input is a gz file (eg. _gmail-takeout.mbox.gz_). Default is `false`.
 
 Generator yields objects with the following properties:
 
@@ -25,10 +74,10 @@ Generator yields objects with the following properties:
 
 Example reads mbox file from standard input and writes messages to console.
 
-```
-const { eachMessage } = require('mbox-reader');
+```js
+const { mboxReader } = require('mbox-reader');
 
-for await (let message of eachMessage(process.stdin)) {
+for await (let message of mboxReader(process.stdin)) {
     console.log(message.returnPath);
     console.log(message.time);
     process.stdout.write(message.content);
@@ -37,4 +86,8 @@ for await (let message of eachMessage(process.stdin)) {
 
 ## License
 
-ISC
+&copy; 2020 Andris Reinman
+
+Licensed under GNU Affero General Public License v3.0 or later.
+
+MIT-licensed version of mbox-reader is available for [Postal Systems subscribers](https://postalsys.com/).

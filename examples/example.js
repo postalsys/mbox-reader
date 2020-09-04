@@ -3,14 +3,14 @@
 // usage:
 // $ cat large-mailbox.mbox | node example.js
 
-const { eachMessage } = require('../lib/mbox-reader');
+const { mboxReader } = require('../lib/mbox-reader');
 
 let counter = 0;
 let start = Date.now();
 
 const main = async () => {
     let stream = process.stdin;
-    for await (let message of eachMessage(stream)) {
+    for await (let message of mboxReader(stream)) {
         console.table({
             nr: ++counter,
             returnPath: message.returnPath,
