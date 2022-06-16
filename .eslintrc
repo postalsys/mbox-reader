@@ -1,65 +1,11 @@
-"use strict";
-
-module.exports = {
-  rules: {
-    strict: [2, "global"],
-    eqeqeq: 2,
-    "no-fallthrough": 2,
-    "no-unused-expressions": [
-      2,
-      {
-        allowShortCircuit: true,
-      },
-    ],
-    "no-unused-vars": 2,
-    "handle-callback-err": 2,
-    "no-new": 2,
-    "new-cap": 2,
-    "no-eval": 2,
-    "no-invalid-this": 2,
-    radix: [2, "always"],
-    "no-regex-spaces": 2,
-    "no-empty": 2,
-    "no-duplicate-case": 2,
-    "no-empty-character-class": 2,
-    "no-redeclare": [
-      2,
-      {
-        builtinGlobals: true,
-      },
-    ],
-    "block-scoped-var": 2,
-    "no-sequences": 2,
-    "no-throw-literal": 2,
-    "no-useless-call": 2,
-    "no-useless-concat": 2,
-    "no-void": 2,
-    yoda: 2,
-    "no-undef": 2,
-    "global-require": 2,
-    "no-var": 2,
-    "no-bitwise": 2,
-    "no-lonely-if": 2,
-    "no-mixed-spaces-and-tabs": 2,
-    "prefer-arrow-callback": 2,
-    "object-shorthand": 2,
-    "prefer-spread": 2,
-    "no-await-in-loop": 0,
-    "require-atomic-updates": 0,
-    "no-prototype-builtins": 0,
-  },
-  env: {
-    es6: true,
-    node: true,
-  },
-  extends: "eslint:recommended",
-  globals: {
-    it: true,
-    describe: true,
-    beforeEach: true,
-    afterEach: true,
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-  },
-};
+{
+    "rules": {
+        "no-redeclare": 0,
+        "no-prototype-builtins": 0,
+        "no-await-in-loop":0
+    },
+    "extends": ["nodemailer", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 2020
+    }
+}
