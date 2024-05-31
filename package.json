@@ -4,23 +4,28 @@
     "description": "Read mbox file as a stream",
     "main": "lib/mbox-reader.js",
     "scripts": {
-        "test": "grunt"
+        "test": "grunt",
+        "update": "rm -rf node_modules package-lock.json && ncu -u && npm install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/postalsys/mbox-reader.git"
     },
     "keywords": [
         "mbox",
         "email"
     ],
     "author": "Andris Reinman",
-    "license": "AGPL-3.0-or-later",
+    "license": "MIT",
     "devDependencies": {
-        "eslint": "8.17.0",
-        "eslint-config-nodemailer": "^1.2.0",
-        "eslint-config-prettier": "^8.5.0",
-        "grunt": "1.5.3",
+        "eslint": "8.57.0",
+        "eslint-config-nodemailer": "1.2.0",
+        "eslint-config-prettier": "9.1.0",
+        "grunt": "1.6.1",
         "grunt-cli": "1.4.3",
-        "grunt-eslint": "24.0.0"
+        "grunt-eslint": "24.3.0"
     },
     "dependencies": {
-        "libmime": "5.1.0"
+        "libmime": "5.3.5"
     }
 }

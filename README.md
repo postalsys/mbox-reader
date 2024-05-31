@@ -8,43 +8,13 @@ MboxReader supports very large (multi gigabyte) mbox files as messages are proce
 
 ## Usage
 
-### Free, AGPL-licensed version
-
-First install the module from npm:
+First install the module from NPM:
 
 ```
 $ npm install mbox-reader
 ```
 
 next import the `mboxReader` generator function into your script:
-
-```js
-const { mboxReader } = require('mbox-reader');
-```
-
-### MIT version
-
-MIT-licensed version is available for [Postal Systems subscribers](https://postalsys.com/).
-
-First install the module from Postal Systems private registry:
-
-```
-$ npm install @postalsys/mbox-reader
-```
-
-next import the `mboxReader` generator function into your script:
-
-```js
-const { mboxReader } = require('@postalsys/mbox-reader');
-```
-
-If you have already built your application using the free version of mbox-reader and do not want to modify require statements in your code, you can install the MIT-licensed version as an alias for "mbox-reader".
-
-```
-$ npm install mbox-reader@npm:@postalsys/mbox-reader
-```
-
-This way you can keep using the old module name
 
 ```js
 const { mboxReader } = require('mbox-reader');
@@ -86,8 +56,6 @@ for await (let message of mboxReader(process.stdin)) {
 
 ## License
 
-&copy; 2020 Andris Reinman
+&copy; 2020 - 2024 Postal Systems OÜ
 
-Licensed under GNU Affero General Public License v3.0 or later.
-
-MIT-licensed version of mbox-reader is available for [Postal Systems subscribers](https://postalsys.com/).
+Licensed under the MIT license.

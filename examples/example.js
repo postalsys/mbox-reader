@@ -11,8 +11,9 @@ let start = Date.now();
 const main = async () => {
     let stream = process.stdin;
     for await (let message of mboxReader(stream)) {
+        counter++;
         console.table({
-            nr: ++counter,
+            nr: counter,
             returnPath: message.returnPath,
             time: message.time.toISOString(),
             size: message.content.length
@@ -22,4 +23,9 @@ const main = async () => {
 
 main()
     .catch(err => console.error(err))
-    .finally(() => console.log('%s messages processed in %s seconds', counter, (Date.now() - start) / 1000));
+    .finally(() => {
+        let delta = Date.now() - start;
+        let agv = Math.round(counter / (delta / 1000));
+
+        console.log('%s messages processed in %s seconds (%s msg/sec)', counter, delta / 1000, agv);
+    });
