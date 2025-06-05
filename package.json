@@ -3,6 +3,7 @@
     "version": "1.2.0",
     "description": "Read mbox file as a stream",
     "main": "lib/mbox-reader.js",
+    "typings": "lib/mbox-reader.d.ts",
     "scripts": {
         "test": "grunt",
         "update": "rm -rf node_modules package-lock.json && ncu -u && npm install"
